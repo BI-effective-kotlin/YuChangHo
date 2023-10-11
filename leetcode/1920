@@ -1,0 +1,17 @@
+https://leetcode.com/problems/build-array-from-permutation/
+
+class Solution {
+    fun buildArray(nums: IntArray): IntArray {
+        val answer = IntArray(nums.size)
+
+        for(i in nums.indices) {
+           answer[i] = nums[nums[i]]
+        }
+
+        // nums.forEachIndexed { index, i -> // nums의 index와 value -> index, i
+        // answer.set(index, nums[i])} 
+        // 위에 처럼할 수도 있음
+
+        return answer;
+    }
+}
