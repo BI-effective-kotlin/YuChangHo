@@ -16,14 +16,14 @@ fun main(args: Array<String>) {
 
 class SeatManager(n: Int) {
 
-    val seat = IntArray(n)
+    val seat = BooleanArray(n)
 
     fun reserve(): Int {
         var smallest = 0
 
         for (i in seat.indices) {
-            if (seat[i] == 0) {
-                seat[i] = 1
+            if (!seat[i]) {
+                seat[i] = true
                 smallest = i
                 break
             }
@@ -33,6 +33,6 @@ class SeatManager(n: Int) {
     }
 
     fun unreserve(seatNumber: Int) {
-        seat[seatNumber - 1] = 0
+        seat[seatNumber - 1] = false
     }
 }
